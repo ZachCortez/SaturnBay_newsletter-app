@@ -10,7 +10,7 @@ import { FormEvent, useRef, useState } from "react";
 function NewsletterForm() {
   const [input, setInput] = useState("");
   const [successMessage, setSuccessMessage] =
-    useState<MembersSuccessResponse>();
+  useState<MembersSuccessResponse>();
   const [errorMessage, setErrorMessage] = useState("");
   const [active, setActive] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -34,7 +34,7 @@ function NewsletterForm() {
       to(button, { keyframes: getTrailsKeyframes(button) });
     }
 
-    const res = await fetch("/api/addSubscription", {
+    const res = await fetch("/api/addSubscription/route.ts", {
       body: JSON.stringify({ email }),
       headers: { "Content-Type": "application/json" },
       method: "POST",
